@@ -10,15 +10,20 @@ import javax.validation.constraints.Size;
 @Entity
 public class Anagrafica {
 
+    @Id
+    Long ndg;
+
     private String data_inserimento;
-    String data_ultima_modifica;
-    String email;
-    String first_name;
-    String name;
-    String ndg_type;
-    String vat_number;
+    private String data_ultima_modifica;
+    private String email;
+    private String first_name;
+    private String name;
+    private String ndg_type;
+    private String vat_number;
 
     public Anagrafica(){}
+
+
 
     public Anagrafica(Long ndg, String data_inserimento, String data_ultima_modifica, String email, String first_name, String name, String ndg_type, String vat_number) {
         this.ndg = ndg;
@@ -31,8 +36,7 @@ public class Anagrafica {
         this.vat_number = vat_number;
     }
 
-    @Id
-    Long ndg;
+
     public Long getNdg() {
         return ndg;
     }
