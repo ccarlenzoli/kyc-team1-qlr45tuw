@@ -1,17 +1,23 @@
 package com.kyc;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import com.kyc.model.Anagrafica;
+import com.kyc.repo.AnagraficaRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-class Service {
+class Scheduler {
+
+    @Autowired
+    private AnagraficaRepo anagraficaRepo;
 
     @Scheduled(fixedDelay = 1000)
-    public static void scheduleFixedDelayTask() {
-        System.out.println(
-                "Fixed delay task - " + System.currentTimeMillis() / 1000);
+    public void scheduleFixedDelayTask() {
+        Iterable<Anagrafica> anagrafiche = anagraficaRepo.findAll();
+        anagrafiche.forEach(anagrafica -> {
+            System.out.println(anagrafica.getVat_number());
+        });
     }
 
 }
