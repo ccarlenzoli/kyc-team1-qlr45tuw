@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 public class Anagrafica {
 
     @Id
-    Long ndg;
+    private Long ndg;
 
     private String data_inserimento;
     private String data_ultima_modifica;
