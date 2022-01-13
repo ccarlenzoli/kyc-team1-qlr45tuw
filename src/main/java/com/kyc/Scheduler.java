@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-class Scheduler {
+public class Scheduler {
 
     @Autowired
     private AnagraficaRepo anagraficaRepo;
