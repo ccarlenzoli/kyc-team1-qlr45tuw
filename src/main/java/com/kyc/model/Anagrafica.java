@@ -21,9 +21,8 @@ public class Anagrafica {
     private String ndg_type;
     private String vat_number;
 
-    public Anagrafica(){}
-
-
+    public Anagrafica() {
+    }
 
     public Anagrafica(Long ndg, String data_inserimento, String data_ultima_modifica, String email, String first_name, String name, String ndg_type, String vat_number) {
         this.ndg = ndg;
